@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Q1 Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</p>
+    <pre>
+        let parent={
+            name:"shubham",
+            age:24
+        }
+        let child={
+            name:"girl"
+        }
+        child.__proto__=parent;
+        console.log(child.age);
+    </pre>
+    <p>Q2. Write code to explain prototype chaining</p>
+    <pre>
+        let parent={
+            name:"shubham",
+            age:24,
+            city:jaipur
+        }
+        let child1={
+            name:"girl"
+        }
+        let child2={
+            name:"Monu",
+            age:24
+        }
+        let child3={
+            name:"sonu"
+        }
+        child1.__proto__=parent;
+        child2.__proto__=child1;
+        child3.__proto__=child2;
+        console.log(child3.city);
+    </pre>
+    <p>Q3. Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</p>
+    <pre>
+        Ans.
+        const ParentObj2={
+            calSum:function(arr){
+             let sum=0;
+              for(let i=0;i< arr.length;i++){
+                sum += arr[i]
+              }
+              console.log(sum)
+            }
+          }
+          ParentObj2.calSum([1,2,3,4,5,6])
+    </pre>
+    <p>Q4. Write a JavaScript function to retrieve all the names of object's own and inherited properties.</p>
+    <pre>
+        Ans.
+        let obj={
+            name:"hem",
+            batch:"EA18",
+            year:"2022"
+        }
+        let result=Object.keys(obj);
+        console.log(result)
+    </pre>
+
+    <script src="./index.js"></script>
+</body>
+</html>
